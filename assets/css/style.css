@@ -1,0 +1,143 @@
+* {
+	font-family: Georgia, serif;
+	color: #444;
+}
+
+body {
+	background-color: #dee;
+	margin: 50px;
+}
+
+/* Headings */
+h1 {
+	font: 60px/68px 'CandalRegular', Arial, sans-serif;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+h2 {
+	font-size:150%;
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-variant: small-caps;
+}
+h3 {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-variant: uppercase;
+}
+
+/* Text */
+p {
+	margin-bottom: 5px;
+}
+p.small {
+	font-size: 90%;
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Tables */
+table {
+	border: 0px;
+	margin: 10px 0px;
+}
+th {
+	font-weight: bold;
+}
+th, td {
+	padding: 2px;
+}
+table#weightings {
+	float: left;
+	width: 150px;
+}
+table#modules {
+	float: left;
+	margin-left: 20px;
+}
+table#year_breakdowns td,
+table#required_grades td,
+table#best_modules td,
+table#worst_modules td,
+table#weightings td.yearnum,
+th {
+	text-align: center;
+}
+
+thead th {
+    padding-bottom: 8px;
+}
+.percent {
+	margin-left: -1.2em;
+/*	attempt to stop the percent sign getting in the way of clicking on the field
+	z-index: 3;
+ 	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none; */
+}
+
+/* Forms */
+input[type=text] {
+    padding: 4px 8px;
+}
+input[type=submit] {
+	padding: 5px;
+}
+a.reset {
+	color: red;
+}
+input#coursetitle {
+	width: 400px;
+	text-align: center;
+}
+.inputmodname {
+	width: 25em;
+}
+.inputmodcode {
+	width: 7em;
+}
+
+.inputmodmark, .inputmodcreds, .inputyearnumber {
+	width: 60px;
+}
+
+p.error {
+	margin-top: 5px;
+}
+.error {
+	color:red;
+}
+
+.success {
+	color:green;
+}
+
+div.clearfix {
+	clear: both;
+}
+
+
+/* URL for copying */
+input.copyurl {
+	text-align:center;
+	padding: 5px;
+	background: lightskyblue;
+	color: black;
+}
+
+img.social {
+	margin-bottom: -9px;
+}

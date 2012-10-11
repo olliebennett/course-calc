@@ -1,0 +1,12 @@
+/* http://www.fontsquirrel.com/fonts/candal */
+
+@font-face {
+    font-family: 'CandalRegular';
+    src: url('Candal-webfont.eot');
+    src: url('Candal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Candal-webfont.woff') format('woff'),
+         url('Candal-webfont.ttf') format('truetype'),
+         url('Candal-webfont.svg#CandalRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

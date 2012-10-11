@@ -1,0 +1,26 @@
+RewriteEngine on
+
+
+########################################################################
+# Remove WWW
+########################################################################
+# Check if host begins 'www'
+# [NC] forces case insensitivity
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# Redirect to non-www version
+# [L] means this is the last rule executed
+# [R=301] means permanent redirect
+RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
+
+
+########################################################################
+# Redirect shortcodes to index.php?sc=XXXXX
+########################################################################
+RewriteCond $1 !^(index\.php|assets|error|robots\.txt|favicon\.ico)
+RewriteRule ^(.*)$ /index.php/?sc=$1 [L]
+
+
+########################################################################
+# Error Handling
+########################################################################
+ErrorDocument 404 /error/404.php
