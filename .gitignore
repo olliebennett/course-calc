@@ -1,12 +1,17 @@
 
-# Windows image file caches
+# Windows thumbnail databases
 Thumbs.db
 
-# Windows Folder config file
-Desktop.ini
+# backup files
+*~
+*.bak
 
-# Mac crap
+# vim swap files
+*.swp
+
+# MacOS dir files
 .DS_Store
 
-# Backups
-*.bak
+# logs
+logs/
+*.log

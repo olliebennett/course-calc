@@ -4,11 +4,9 @@ __Calculate your current degree grade in a snap! Visit [CourseCalc.com](http://c
 
 ## To-Do List
 
-This is a list of planned improvements, vaguely sorted in descending order of priority.
+This is a list of planned improvements, (loosely) sorted in descending order of priority.
 
-### Plan to Implement
-
-- [guiders](https://github.com/jeff-optimizely/Guiders-JS) for first-time users.
+### Planning Implementation
 
 - bulk uploading content by pasting a table/csv/text of your data (allowing users to copy/paste from university intranets, spreadsheets etc.)
 
@@ -20,13 +18,25 @@ This is a list of planned improvements, vaguely sorted in descending order of pr
 
 - allow deleting any row/module, other than the final one
 
+- Better UI for adding/removing green/red add/remove buttons
+
+- Remove superfluous "totalling x credits" etc. text, which degrades UX.
+
+- Implement JavaScript (interactive) graphs
+
+- Perhaps use [backbone.js](http://backbonejs.org/): collection=year, model=module, each row = view (each bound to model)
+
+- Enable 'undeleting' of a single row
+
+### Considering Implementation
+
 - allow reordering rows/modules
 
-### May Implement
+- [guiders](https://github.com/jeff-optimizely/Guiders-JS) for first-time users.
 
 - sliderbar to set percentage weightings for the years, [like this](http://www.frequency-decoder.com/demo/slider-v2/).
 
-- avoid saving a new copy of data if nothing has changed.
+- avoid saving a new copy of data (and hence creating a new shortcode) if nothing has changed.
 
 - allow creating user to modify course details, OR use versioning system like jsFiddle does.
 
@@ -34,9 +44,9 @@ This is a list of planned improvements, vaguely sorted in descending order of pr
 
 ## Contributing
 
-If you've got any ideas for things to implement, get in touch here or via [OllieBennett.co.uk](http://olliebennett.co.uk).
+If you've got any ideas for things to implement, get in touch through GitHub or via [OllieBennett.co.uk](http://olliebennett.co.uk).
 
-If you've got the technical know-how, fork me and add the feature/fix yourself!
+If possible, fork the project, add the feature/bugfix yourself, and throw me a pull request!
 
 ## Changelog
 
@@ -48,4 +58,4 @@ If you've got the technical know-how, fork me and add the feature/fix yourself!
 
 - __2012-04__ Database (i.e. permanent storage) implemented.
 
-- __2010-12__ Wireframe and simple custom-javascript functionality.
+- __2010-12__ Wireframe and simple custom-javascript functionality, but no calculations performed.

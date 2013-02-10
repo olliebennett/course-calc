@@ -14,7 +14,7 @@
 				<td><a href="javascript:decrementYear()">[-]</a> <span id="num_years">0</span> <a href="javascript:incrementYear()">[+]</a> years</td>
 			</tr>
 		</tbody>
-	</table><!-- #weightings -->
+	</table><!-- #course_info -->
 	
 	<div class="clearfix;"></div>
 	
@@ -45,11 +45,11 @@
 	</table><!-- #modules -->
 	
 	<div class="clearfix"></div>
-				
+	
 	<input type="submit" name="save" value="Calculate and Save"  /> or <a href="http://coursecalc.com/" onclick="return confirm('This will wipe any data entered above. Continue?');" class="reset">RESET</a>
-					
+	
 	</form>
-			
+	
 <div id="results">
 	&nbsp;
 </div>

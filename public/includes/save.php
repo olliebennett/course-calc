@@ -16,21 +16,20 @@ if (isset($post['save'])) unset($post['save']);
 // Data Arrays
 $yrweights = array(); 	// $yrweights[year1] = year1's weight
 $modules = array(); 	// $module[year1][module1]['crds'] = year1_module1's credits
+$modules_temp = array();
 
 // Parse POST variables
-foreach ($post as $POSTkey => $POSTval)
-{
+foreach ($post as $POSTkey => $POSTval) {
+	
 	// Split post key
 	$POSTkeyBANG = explode('_',$POSTkey);
 	
 	// Handle year percentage
-	if ($POSTkeyBANG[0] == 'yearpercentage')
-	{
+	if ($POSTkeyBANG[0] == 'yearpercentage') {
 		if(is_numeric($POSTval)) {
 			$yrweights[(int)$POSTkeyBANG[1]] = (float)$POSTval;
 		}
-		else
-		{
+		else {
 			if ($POSTval == '') show_error('The parameter {POST['.$POSTkey.']} was blank.');
 			else show_error('The parameter {POST['.$POSTkey.'] = "'.$POSTval.'"} was not numeric.');
 		}
@@ -39,19 +38,30 @@ foreach ($post as $POSTkey => $POSTval)
 	elseif ($POSTkeyBANG[0] == 'coursetitle') {
 		$course_title = mysql_real_escape_string($POSTval);
 	}
-	else
-	{
-		//d($POSTval);
+	else {
 		if (in_array($POSTkeyBANG[2],array('name','crds','mark','code'))) {
-			$modules[(int)$POSTkeyBANG[0]][(int)$POSTkeyBANG[1]][$POSTkeyBANG[2]] = $POSTval;
+			$modules_temp[(int)$POSTkeyBANG[0]][(int)$POSTkeyBANG[1]][$POSTkeyBANG[2]] = $POSTval;
 		}
-		else
-		{
+		else {
 			show_error('The parameter {POST['.$POSTkey.'] = "'.$POSTval.'"} was invalid.');
 		}
 		
 	}
 }
+
+d("fixing modules array");
+d($modules_temp,'modules_temp');
+
+// Fix array so that module numbers increment continuously from 1
+// (this allows for cases where user has deleted e.g. module 3 of 7)
+foreach ($modules_temp as $yr => $moduledetails) {
+	$yrmodcount = 0;
+	foreach ($moduledetails as $key => $val) {
+		$modules[$yr][$yrmodcount++] = $modules_temp[$yr][$key];
+	}
+}
+
+d($modules,'modules');
 
 //d($yrweights,'$yrweights');
 //d($modules,'$modules');
@@ -64,7 +74,6 @@ if (array_sum($yrweights) != 100) {
 
 
 // Ensure shortcode does not already exist in DB.
-//d('entering do-while loop');
 do {
     // Generate shortcode
 	$shortcode = createShortcode();
@@ -96,7 +105,6 @@ $course_id = mysql_insert_id();
 
 // d($course_id,'$course_id');
 
-
 // Insert module data
 $query_string = 'INSERT INTO modules (course_id,module_year,module_name,module_code,module_crds,module_mark) ';
 $query_string .= 'VALUES ';
@@ -120,4 +128,4 @@ $sharestring_enc = urlencode($sharestring);
 // would be good if this was customised dependant on whether course was completed or not...
 
 // redirect
-header('Location: ' . $shortcode);
+//header('Location: ' . $shortcode);

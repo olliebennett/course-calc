@@ -13,15 +13,15 @@
 		<link rel="stylesheet" type="text/css" href="/assets/css/fonts.css" />
 		
 		<!-- jQuery from Google CDN, with local fallback -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript">
-		if (typeof jQuery == 'undefined')
-		{
-			document.write(unescape("%3Cscript src='/assets/js/jquery-1.8.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+		if (typeof jQuery === 'undefined') {
+			document.write(unescape("%3Cscript src='/assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
 		}
 		</script>
 		
 <?php if (isset($modules)) : ?>
+		<!-- CourseCalc Data -->
 		<script>
 			var data_yrweights = []; // preallocate year weights array
 <?php foreach ($yrweights as $yr => $weight) : ?>
@@ -42,7 +42,7 @@
 		</script>
 <?php endif; ?>
 		
-		<script src="/assets/js/js.min.js"></script>
+		<script src="/assets/js/js.js"></script>
 		
 	</head>
 	
@@ -52,7 +52,7 @@
 			<h1><a href="http://coursecalc.com/">Course Calc</a></h1>
 			<hr />
 			<p>How's <em>your</em> degree going? Course Calc shows your current degree grade, predicts your final classification and determines the marks needed to achieve a 1<sup>st</sup>, 2-1, 2-2 or 3<sup>rd</sup>.</p>
-		</div><!-- #header -->		
+		</div><!-- #header -->
 		
 		<div id="content">
 		
